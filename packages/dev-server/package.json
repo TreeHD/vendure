@@ -19,6 +19,8 @@
         "dev:instrumented": "concurrently npm:dev:server:instrumented npm:dev:worker:instrumented",
         "dashboard:dev": "node ../cli/dist/cli.js dev dashboard",
         "test:dev-workflow": "node --test ./scripts/*.spec.mjs",
+        "test:gallery": "bun run build:server && node ./scripts/gallery-catalog.spec.cjs && node ./scripts/gallery-price-policy.spec.cjs",
+        "test:cms": "bun run build:server && node ./scripts/cms.spec.cjs",
         "build": "node ../cli/dist/cli.js build all",
         "build:server": "node ../cli/dist/cli.js build server",
         "build:worker": "node ../cli/dist/cli.js build worker",
@@ -32,10 +34,12 @@
     },
     "dependencies": {
         "@nestjs/axios": "^4.0.0",
+        "@nestjs/swagger": "^11",
         "@vendure/asset-server-plugin": "3.7.3",
         "@vendure/common": "3.7.3",
         "@vendure/core": "3.7.3",
-        "@vendure/email-plugin": "3.7.3"
+        "@vendure/email-plugin": "3.7.3",
+        "stripe": "^22.6.1"
     },
     "devDependencies": {
         "@typescript/native-preview": "7.0.0-dev.20260515.1",

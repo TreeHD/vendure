@@ -31,6 +31,14 @@ export default defineConfig({
                 host: adminApiHost,
                 port: adminApiPort,
             },
+            // This project ships a Traditional Chinese Dashboard. Restrict the
+            // built-in language picker to the catalog that is bundled below.
+            i18n: {
+                defaultLanguage: 'zh_Hant',
+                defaultLocale: 'zh-TW',
+                availableLanguages: ['zh_Hant'],
+                availableLocales: ['zh-TW'],
+            },
             gqlOutputPath: path.resolve(__dirname, './graphql/'),
         }),
     ],

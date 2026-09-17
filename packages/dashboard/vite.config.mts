@@ -1,3 +1,4 @@
+import { LanguageCode } from '@vendure/common/lib/generated-types';
 import path from 'path';
 import { pathToFileURL } from 'url';
 import { loadEnv } from 'vite';
@@ -41,6 +42,12 @@ export default ({ mode }: { mode: string }) => {
             vendureDashboardPlugin({
                 vendureConfigPath: pathToFileURL(vendureConfigPath),
                 api: { host: adminApiHost, port: adminApiPort },
+                i18n: {
+                    defaultLanguage: LanguageCode.zh_Hant,
+                    defaultLocale: 'zh-TW',
+                    availableLanguages: [LanguageCode.zh_Hant],
+                    availableLocales: ['zh-TW'],
+                },
                 tempCompilationDir: path.resolve(__dirname, './.temp'),
                 // Opt into the pre-built bundle for the bundle-mode e2e run.
                 useExperimentalBundle: process.env.VITE_USE_EXPERIMENTAL_BUNDLE === 'true',

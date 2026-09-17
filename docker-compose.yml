@@ -1,162 +1,71 @@
-# This contains the services required to develop and test Vendure
-# locally. It includes multiple SQL databases (for testing specific
-# versions), Elasticsearch, Redis etc.
-name: vendure-monorepo
 services:
-    mariadb:
-        image: 'mariadb:latest'
-        container_name: mariadb
+    app:
+        image: ${APP_IMAGE}
+        build:
+            context: ${APP_BUILD_CONTEXT}
+            dockerfile: ${APP_DOCKERFILE}
+        depends_on:
+            postgres:
+                condition: ${POSTGRES_DEPENDS_ON_CONDITION}
         environment:
-            MARIADB_DATABASE: vendure-dev
-            MARIADB_USER: vendure
-            MARIADB_PASSWORD: password
-            MARIADB_ROOT_PASSWORD: password
+            NODE_ENV: ${NODE_ENV}
+            DB: ${DB}
+            DB_HOST: ${DB_HOST}
+            DB_PORT: ${DB_PORT}
+            DB_NAME: ${DB_NAME}
+            DB_USERNAME: ${DB_USERNAME}
+            DB_PASSWORD: ${DB_PASSWORD}
+            DB_SYNCHRONIZE: ${DB_SYNCHRONIZE}
+            PORT: ${APP_CONTAINER_PORT}
+            VENDURE_COOKIE_SECRET: ${VENDURE_COOKIE_SECRET}
+            SUPERADMIN_USERNAME: ${SUPERADMIN_USERNAME}
+            SUPERADMIN_PASSWORD: ${SUPERADMIN_PASSWORD}
+            VENDURE_STOREFRONT_URL: ${VENDURE_STOREFRONT_URL}
+            VENDURE_CORS_ORIGINS: ${VENDURE_CORS_ORIGINS}
+            VENDURE_TRUST_PROXY: ${VENDURE_TRUST_PROXY}
+            VENDURE_ASSET_UPLOAD_DIR: ${VENDURE_ASSET_UPLOAD_DIR}
+            VENDURE_ASSET_URL_PREFIX: ${VENDURE_ASSET_URL_PREFIX}
+            VENDURE_SERVE_STATIC_DASHBOARD: ${VENDURE_SERVE_STATIC_DASHBOARD}
+            VENDURE_SERVE_GRAPHIQL: ${VENDURE_SERVE_GRAPHIQL}
+            VENDURE_SERVE_SWAGGER: ${VENDURE_SERVE_SWAGGER}
+            VENDURE_VERIFY_EMAIL_URL: ${VENDURE_VERIFY_EMAIL_URL}
+            VENDURE_PASSWORD_RESET_URL: ${VENDURE_PASSWORD_RESET_URL}
+            VENDURE_CHANGE_EMAIL_URL: ${VENDURE_CHANGE_EMAIL_URL}
+            SMTP_HOST: ${SMTP_HOST}
+            SMTP_PORT: ${SMTP_PORT}
+            SMTP_SECURE: ${SMTP_SECURE}
+            SMTP_USER: ${SMTP_USER}
+            SMTP_PASSWORD: ${SMTP_PASSWORD}
+            EMAIL_FROM_ADDRESS: ${EMAIL_FROM_ADDRESS}
+            STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY:-}
+            STRIPE_WEBHOOK_SECRET: ${STRIPE_WEBHOOK_SECRET:-}
+            S3_BUCKET: ${S3_BUCKET}
+            S3_ACCESS_KEY_ID: ${S3_ACCESS_KEY_ID}
+            S3_SECRET_ACCESS_KEY: ${S3_SECRET_ACCESS_KEY}
+            S3_REGION: ${S3_REGION}
+            S3_ENDPOINT: ${S3_ENDPOINT}
+            S3_FORCE_PATH_STYLE: ${S3_FORCE_PATH_STYLE}
+        ports:
+            - '${APP_HOST_PORT}:${APP_CONTAINER_PORT}'
         volumes:
-            - 'mariadb_data:/var/lib/mysql'
-        ports:
-            - '3306:3306'
-    mysql_8:
-        image: mysql:8.0
-        container_name: mysql-8
-        environment:
-            MYSQL_DATABASE: vendure-dev
-            MYSQL_USER: vendure
-            MYSQL_PASSWORD: password
-            MYSQL_ROOT_PASSWORD: password
-        volumes:
-            - 'mysql_data:/var/lib/mysql'
-        ports:
-            - '3306:3306'
-    mysql_5:
-        image: mysql:5.7
-        container_name: mysql-5.7
-        environment:
-            MYSQL_DATABASE: vendure-dev
-            MYSQL_USER: vendure
-            MYSQL_PASSWORD: password
-            MYSQL_ROOT_PASSWORD: password
-        volumes:
-            - 'mysql_data:/var/lib/mysql'
-        ports:
-            - '3306:3306'
-    postgres_12:
-        image: postgres:12.3
-        container_name: postgres_12
-        environment:
-            POSTGRES_DB: vendure-dev
-            POSTGRES_USER: vendure
-            POSTGRES_PASSWORD: password
-            PGDATA: /var/lib/postgresql/data
-        volumes:
-            - postgres_12_data:/var/lib/postgresql/data
-        ports:
-            - '5432:5432'
-        command: postgres -c shared_preload_libraries=pg_stat_statements -c pg_stat_statements.track=all -c pg_stat_statements.max=100000 -c max_connections=200
-    postgres_16:
-        image: postgres:16
-        container_name: postgres_16
-        environment:
-            POSTGRES_DB: vendure-dev
-            POSTGRES_USER: vendure
-            POSTGRES_PASSWORD: password
-            PGDATA: /var/lib/postgresql/data
-        volumes:
-            - postgres_16_data:/var/lib/postgresql/data
-        ports:
-            - '5432:5432'
-        command: postgres -c shared_preload_libraries=pg_stat_statements -c pg_stat_statements.track=all -c pg_stat_statements.max=100000 -c max_connections=200
-    # This is the Keycloak service which is used
-    # to test the Keycloak auth strategy
-    keycloak:
-        image: quay.io/keycloak/keycloak
-        ports:
-            - '9000:8080'
-        environment:
-            KEYCLOAK_ADMIN: admin
-            KEYCLOAK_ADMIN_PASSWORD: admin
-        command:
-            - start-dev
-            - --import-realm
-        volumes:
-            - keycloak_data:/opt/keycloak/data
-    elasticsearch:
-        image: docker.elastic.co/elasticsearch/elasticsearch:9.1.0
-        container_name: elasticsearch
-        environment:
-            - node.name=es
-            - cluster.name=es-docker-cluster
-            - xpack.security.enabled=false
-            - xpack.security.http.ssl.enabled=false
-            - xpack.security.transport.ssl.enabled=false
-            - xpack.license.self_generated.type=basic
-            - discovery.type=single-node
-            - bootstrap.memory_lock=true
-            - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
-        mem_limit: 536870912
-        ulimits:
-            memlock:
-                soft: -1
-                hard: -1
-        volumes:
-            - esdata:/usr/share/elasticsearch/data
-        ports:
-            - 9200:9200
-    redis:
-        image: redis:7.2-alpine
-        hostname: redis
-        environment: []
-        ports:
-            - '6379:6379'
-    jaeger:
-        image: jaegertracing/all-in-one:latest
-        container_name: jaeger
-        ports:
-            - '4318:4318' # OTLP HTTP receiver
-            - '16686:16686' # Web UI
-        environment:
-            - COLLECTOR_OTLP_ENABLED=true
-        volumes:
-            - jaeger_data:/badger
+            - vendure_assets:${VENDURE_ASSET_UPLOAD_DIR}
 
-    loki:
-        image: grafana/loki:3.4
-        ports:
-            - '3100:3100'
-        networks:
-            - loki
-
-    grafana:
+    postgres:
+        image: ${POSTGRES_IMAGE}
         environment:
-            - GF_PATHS_PROVISIONING=/etc/grafana/provisioning
-            - GF_AUTH_ANONYMOUS_ENABLED=true
-            - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
-            - GF_FEATURE_TOGGLES_ENABLE=alertingSimplifiedRouting,alertingQueryAndExpressionsStepMode
-        image: grafana/grafana:latest
-        ports:
-            - '3200:3000'
+            POSTGRES_DB: ${POSTGRES_DB}
+            POSTGRES_USER: ${POSTGRES_USER}
+            POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+        healthcheck:
+            test: ['CMD-SHELL', 'pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}']
+            interval: ${POSTGRES_HEALTHCHECK_INTERVAL}
+            timeout: ${POSTGRES_HEALTHCHECK_TIMEOUT}
+            retries: ${POSTGRES_HEALTHCHECK_RETRIES}
         volumes:
-          - grafana-storage:/var/lib/grafana
-        networks:
-            - loki
-
-networks:
-    loki:
-        driver: bridge
+            - postgres_data:${POSTGRES_DATA_PATH}
 
 volumes:
-    postgres_16_data:
-        driver: local
-    postgres_12_data:
-        driver: local
-    mariadb_data:
-        driver: local
-    mysql_data:
-        driver: local
-    keycloak_data:
-        driver: local
-    esdata:
-        driver: local
-    jaeger_data:
-        driver: local
-    grafana-storage:
-        driver: local
+    postgres_data:
+        name: ${POSTGRES_VOLUME_NAME}
+    vendure_assets:
+        name: ${ASSET_VOLUME_NAME}

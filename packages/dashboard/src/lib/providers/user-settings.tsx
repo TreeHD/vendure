@@ -2,6 +2,7 @@ import { LS_KEY_USER_SETTINGS } from '@/vdb/constants.js';
 import { QueryClient, useMutation, useQuery } from '@tanstack/react-query';
 import { ColumnFiltersState } from '@tanstack/react-table';
 import React, { createContext, useEffect, useRef, useState } from 'react';
+import { uiConfig } from 'virtual:vendure-ui-config';
 import { api } from '../graphql/api.js';
 import {
     getSettingsStoreValueDocument,
@@ -31,8 +32,8 @@ export interface UserSettings {
 }
 
 const defaultSettings: UserSettings = {
-    displayLanguage: 'en',
-    displayLocale: undefined,
+    displayLanguage: uiConfig.i18n.defaultLanguage,
+    displayLocale: uiConfig.i18n.defaultLocale,
     contentLanguage: 'en',
     theme: 'system',
     displayUiExtensionPoints: false,
@@ -42,6 +43,22 @@ const defaultSettings: UserSettings = {
     hasSeenOnboarding: false,
     tableSettings: {},
 };
+
+/**
+ * Keep persisted settings compatible with the languages bundled into this
+ * Dashboard build. This also migrates an existing user's English setting to
+ * the configured default when English is not available.
+ */
+function normalizeSettings(settings: Partial<UserSettings>): UserSettings {
+    const merged = { ...defaultSettings, ...settings };
+    if (!uiConfig.i18n.availableLanguages.some(language => language === merged.displayLanguage)) {
+        merged.displayLanguage = defaultSettings.displayLanguage;
+    }
+    if (merged.displayLocale && !uiConfig.i18n.availableLocales.includes(merged.displayLocale)) {
+        merged.displayLocale = defaultSettings.displayLocale;
+    }
+    return merged;
+}
 
 export interface UserSettingsContextType {
     /**
@@ -83,12 +100,12 @@ export const UserSettingsProvider: React.FC<UserSettingsProviderProps> = ({ quer
         try {
             const storedSettings = localStorage.getItem(LS_KEY_USER_SETTINGS);
             if (storedSettings) {
-                return { ...defaultSettings, ...JSON.parse(storedSettings) };
+                return normalizeSettings(JSON.parse(storedSettings));
             }
         } catch (e) {
             console.error('Failed to load user settings from localStorage', e);
         }
-        return { ...defaultSettings };
+        return normalizeSettings({});
     };
 
     const [settings, setSettings] = useState<UserSettings>(loadSettings);
@@ -146,7 +163,7 @@ export const UserSettingsProvider: React.FC<UserSettingsProviderProps> = ({ quer
                     serverSettingsResponse?.getSettingsStoreValue as UserSettings | null;
                 if (serverSettingsData) {
                     // Server has settings, use them
-                    const mergedSettings = { ...defaultSettings, ...serverSettingsData };
+                    const mergedSettings = normalizeSettings(serverSettingsData);
                     setSettings(mergedSettings);
                     setServerSettings(mergedSettings);
                     setIsReady(true);

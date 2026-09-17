@@ -1,0 +1,11 @@
+.git
+.vendure
+node_modules
+**/node_modules
+**/dist
+packages/*/lib
+**/coverage
+**/e2e/__data__
+docs/public
+*.log
+.env

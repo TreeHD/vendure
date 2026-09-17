@@ -24,7 +24,7 @@ msgstr "選取項目"
 
 #: src/lib/components/shared/asset/asset-gallery.tsx
 msgid "Uploading assets..."
-msgstr ""
+msgstr "正在上傳資產..."
 
 #: src/app/routes/_authenticated/_customers/components/customer-history/default-customer-history-components.tsx
 #: src/app/routes/_authenticated/_customers/components/customer-history/default-customer-history-components.tsx
@@ -167,7 +167,7 @@ msgstr "類型"
 
 #: src/app/routes/_authenticated/_channels/channels_.$id.tsx
 msgid "The default currency is chosen from this list."
-msgstr ""
+msgstr "預設貨幣會從此清單中選取。"
 
 #. placeholder {0}: entityName.toLowerCase()
 #. placeholder {0}: group.name
@@ -179,7 +179,7 @@ msgstr "選取 {0}"
 #. placeholder {0}: selectedItems.length
 #: src/lib/components/data-input/relation-selector.tsx
 msgid "Add more ({0} selected)"
-msgstr ""
+msgstr "新增更多（已選取 {0} 項）"
 
 #: src/app/routes/_authenticated/_facets/facets.tsx
 msgid "View values"
@@ -241,7 +241,7 @@ msgstr "已刪除 {deleted} {entityName}"
 
 #: src/lib/components/shared/asset/asset-properties.tsx
 msgid "File Size"
-msgstr ""
+msgstr "檔案大小"
 
 #: src/app/routes/_authenticated/_system/healthchecks.tsx
 #~ msgid "Healthchecks"
@@ -521,7 +521,7 @@ msgstr "父級產品"
 
 #: src/lib/components/shared/customer-selector.tsx
 msgid "Create new customer"
-msgstr ""
+msgstr "建立新客戶"
 
 #: src/app/routes/_authenticated/_shipping-methods/components/test-address-form.tsx
 #: src/lib/components/shared/customer-address-form.tsx
@@ -556,7 +556,7 @@ msgstr "此欄位為唯讀"
 #: src/lib/components/shared/assign-to-channel-dialog.tsx
 #: src/lib/components/shared/assign-to-channel-dialog.tsx
 msgid "{0, plural, one {Assigned {entityIdsLength} {entityType} to {1} channel} other {Assigned {entityIdsLength} {entityType} to {2} channels}}"
-msgstr ""
+msgstr "{0, plural, one {已將 {entityIdsLength} 個 {entityType} 指派至 {1} 個通路} other {已將 {entityIdsLength} 個 {entityType} 指派至 {2} 個通路}}"
 
 #: src/lib/framework/dashboard-widget/metrics-widget/index.tsx
 #: src/lib/framework/dashboard-widget/metrics-widget/index.tsx
@@ -565,7 +565,7 @@ msgstr "訂單數量"
 
 #: src/app/routes/_authenticated/_channels/channels_.$id.tsx
 msgid "You must first select an available currency to set a default currency"
-msgstr ""
+msgstr "必須先選取可用貨幣，才能設定預設貨幣"
 
 #: src/app/routes/_authenticated/_orders/components/order-detail-shared.tsx
 #: src/app/routes/_authenticated/_orders/orders_.$id_.modify.tsx
@@ -732,7 +732,7 @@ msgstr "中繼資料"
 #. placeholder {0}: error.message
 #: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx
 msgid "Failed to set shipping method for order: {0}"
-msgstr ""
+msgstr "設定訂單配送方式失敗：{0}"
 
 #: src/app/routes/_authenticated/_option-groups/components/option-group-products-block.tsx
 #: src/lib/components/data-table/data-table.tsx
@@ -762,7 +762,7 @@ msgstr "可用貨幣"
 
 #: src/lib/components/shared/customer-selector.tsx
 msgid "Search customers..."
-msgstr ""
+msgstr "搜尋客戶..."
 
 #. placeholder {0}: selectedIds.size
 #: src/lib/components/data-input/product-multi-selector-input.tsx
@@ -912,7 +912,7 @@ msgstr "確認"
 #. placeholder {0}: error.message
 #: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx
 msgid "Failed to complete draft order: {0}"
-msgstr ""
+msgstr "完成草稿訂單失敗：{0}"
 
 #: src/app/routes/_authenticated/_collections/collections_.$id.tsx
 msgid "Failed to create collection"
@@ -940,7 +940,7 @@ msgstr "客戶"
 #: src/app/routes/_authenticated/_orders/orders_.$id_.modify.tsx
 #: src/app/routes/_authenticated/_orders/orders_.$id_.modify.tsx
 msgid "Update address"
-msgstr ""
+msgstr "更新地址"
 
 #. placeholder {0}: error.message
 #: src/app/routes/_authenticated/_orders/components/order-history/order-history-container.tsx
@@ -1074,7 +1074,7 @@ msgstr "已配置"
 #. placeholder {0}: error.message
 #: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx
 msgid "Failed to set coupon code for order: {0}"
-msgstr ""
+msgstr "設定訂單優惠券代碼失敗：{0}"
 
 #: src/app/routes/_authenticated/_stock-locations/components/delete-stock-locations-dialog.tsx
 msgid "Select what to do with remaining stock"
@@ -1197,7 +1197,7 @@ msgstr "電子郵件地址"
 #. placeholder {0}: error.message
 #: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx
 msgid "Failed to remove coupon code from order: {0}"
-msgstr ""
+msgstr "從訂單移除優惠券代碼失敗：{0}"
 
 #: src/lib/components/data-input/slug-input.tsx
 #: src/lib/components/data-input/slug-input.tsx
@@ -1262,7 +1262,7 @@ msgstr "價格包含預設稅務區域的稅金"
 #: src/app/routes/_authenticated/_channels/channels_.$id.tsx
 #: src/app/routes/_authenticated/_channels/channels_.$id.tsx
 msgid "This field is required"
-msgstr ""
+msgstr "此欄位為必填"
 
 #: src/app/routes/_authenticated/_orders/components/order-modification-preview-dialog.tsx
 msgid "Total refund:"
@@ -1348,7 +1348,7 @@ msgstr "僅您帳戶已指派的角色可用。"
 
 #: src/app/routes/_authenticated/_system/components/cancel-jobs-bulk-action.tsx
 msgid "{cancellableCount, plural, one {Cancel {cancellableCount} job} other {Cancel {cancellableCount} jobs}}"
-msgstr ""
+msgstr "{cancellableCount, plural, one {取消 {cancellableCount} 個工作} other {取消 {cancellableCount} 個工作}}"
 
 #: src/lib/components/data-input/product-multi-selector-input.tsx
 msgid "{buttonText}"
@@ -1502,7 +1502,7 @@ msgstr "之前"
 #. placeholder {0}: error.message
 #: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx
 msgid "Failed to set customer for order: {0}"
-msgstr ""
+msgstr "設定訂單客戶失敗：{0}"
 
 #: src/lib/components/shared/asset/asset-gallery.tsx
 msgid "Size"
@@ -1597,7 +1597,7 @@ msgstr "客戶"
 
 #: src/app/routes/_authenticated/_shipping-methods/components/shipping-calculator-selector.tsx
 msgid "Select Shipping Calculator"
-msgstr ""
+msgstr "選擇配送計算器"
 
 #: src/lib/components/layout/language-dialog.tsx
 msgid "Sample Formatting"
@@ -1639,7 +1639,7 @@ msgstr "選取要將 {0} 移動到的目標集合。"
 #. placeholder {0}: error.message
 #: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx
 msgid "Failed to unset billing address for order: {0}"
-msgstr ""
+msgstr "取消設定訂單帳單地址失敗：{0}"
 
 #: src/app/routes/_authenticated/_customers/components/customer-history/customer-history-utils.tsx
 msgid "Customer details updated"
@@ -1694,7 +1694,7 @@ msgstr "取消"
 #. placeholder {0}: error.message
 #: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx
 msgid "Failed to update order custom fields: {0}"
-msgstr ""
+msgstr "更新訂單自訂欄位失敗：{0}"
 
 #: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx
 #: src/app/routes/_authenticated/_products/components/add-product-variant-dialog.tsx
@@ -1739,7 +1739,7 @@ msgstr "集合"
 
 #: src/app/routes/_authenticated/_shipping-methods/components/shipping-eligibility-checker-selector.tsx
 msgid "Select Shipping Eligibility Checker"
-msgstr ""
+msgstr "選擇配送資格檢查器"
 
 #: src/app/routes/_authenticated/_products/products_.$id_.variants.tsx
 msgid "Delete variant"
@@ -1784,7 +1784,7 @@ msgstr "私人集合在商店中不可見"
 
 #: src/lib/components/shared/customer-selector.tsx
 msgid "Create customer"
-msgstr ""
+msgstr "建立客戶"
 
 #: src/app/routes/_authenticated/_product-variants/product-variants_.$id.tsx
 #: src/app/routes/_authenticated/_products/products_.$id.tsx
@@ -2091,7 +2091,7 @@ msgstr "佈景主題"
 
 #: src/app/routes/_authenticated/_channels/channels_.$id.tsx
 msgid "You must select at least one available currency"
-msgstr ""
+msgstr "必須至少選取一種可用貨幣"
 
 #. placeholder {0}: value.totalItems
 #: src/app/routes/_authenticated/_customer-groups/customer-groups.tsx
@@ -2465,7 +2465,7 @@ msgstr "集合移動成功"
 
 #: src/lib/components/data-input/relation-selector.tsx
 msgid "Change selection"
-msgstr ""
+msgstr "變更選取項目"
 
 #: src/app/routes/_authenticated/_customers/components/customer-status-badge.tsx
 msgid "Registered"
@@ -2474,7 +2474,7 @@ msgstr "已註冊"
 #. placeholder {0}: error.message
 #: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx
 msgid "Failed to set shipping address for order: {0}"
-msgstr ""
+msgstr "設定訂單配送地址失敗：{0}"
 
 #: src/app/routes/_authenticated/_system/job-queue.tsx
 msgid "Cancel Job"
@@ -2692,7 +2692,7 @@ msgstr "刪除檢視"
 
 #: src/lib/components/shared/assign-to-channel-dialog.tsx
 msgid "Failed to assign {entityIdsLength} {entityType} to the selected channels"
-msgstr ""
+msgstr "將 {entityIdsLength} 個 {entityType} 指派至所選通路失敗"
 
 #: src/app/routes/_authenticated/_customers/customers_.$id.tsx
 msgid "Add a new address to the customer."
@@ -2784,7 +2784,7 @@ msgstr "所有類型"
 #. placeholder {0}: entityIds.length
 #: src/lib/components/shared/assign-to-channel-dialog.tsx
 msgid "Select channels to assign {0} {entityType} to"
-msgstr ""
+msgstr "選取要指派 {0} 個 {entityType} 的通路"
 
 #: src/app/routes/_authenticated/_orders/components/draft-order-status.tsx
 msgid "Only draft orders can be completed"
@@ -2796,7 +2796,7 @@ msgstr "更新商品失敗"
 
 #: src/app/routes/_authenticated/_collections/components/collection-filters-selector.tsx
 msgid "Add collection filter"
-msgstr ""
+msgstr "新增集合篩選條件"
 
 #. placeholder {0}: adjustedLines.length
 #: src/app/routes/_authenticated/_orders/components/order-modification-summary.tsx
@@ -3114,7 +3114,7 @@ msgstr "退款處理成功"
 
 #: src/lib/components/data-table/filters/data-table-enum-filter.tsx
 msgid "Select value"
-msgstr ""
+msgstr "選擇值"
 
 #. placeholder {0}: action.label
 #. placeholder {0}: entityType === 'products' ? 'Product' : 'Variant'
@@ -3283,7 +3283,7 @@ msgstr "選取顯示語言"
 
 #: src/app/routes/_authenticated/_payment-methods/components/payment-handler-selector.tsx
 msgid "Select Payment Handler"
-msgstr ""
+msgstr "選擇付款處理器"
 
 #: src/app/routes/_authenticated/_profile/profile.tsx
 msgid "Authentication methods"
@@ -3543,7 +3543,7 @@ msgstr "不等於"
 
 #: src/lib/components/shared/customer-selector.tsx
 msgid "Existing customer"
-msgstr ""
+msgstr "現有客戶"
 
 #: src/app/routes/_authenticated/_products/components/create-product-options-dialog.tsx
 #~ msgid "e.g. Size"
@@ -3551,7 +3551,7 @@ msgstr ""
 
 #: src/app/routes/_authenticated/_payment-methods/components/payment-eligibility-checker-selector.tsx
 msgid "No checkers found"
-msgstr ""
+msgstr "找不到檢查器"
 
 #: src/app/routes/_authenticated/_orders/components/payment-details.tsx
 msgid "Settle payment"
@@ -3594,7 +3594,7 @@ msgstr "新增商品"
 
 #: src/lib/components/shared/assign-to-channel-dialog.tsx
 msgid "Failed for: {failedCodes}"
-msgstr ""
+msgstr "失敗項目：{failedCodes}"
 
 #: src/app/routes/_authenticated/_assets/components/manage-tags-dialog.tsx
 msgid "Manage Tags"
@@ -3697,7 +3697,7 @@ msgstr "行銷"
 
 #: src/app/routes/_authenticated/_orders/components/customer-address-selector.tsx
 msgid "Existing address"
-msgstr ""
+msgstr "現有地址"
 
 #: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx
 msgid "Draft order deleted"
@@ -3766,7 +3766,7 @@ msgstr "完成付款失敗"
 #. placeholder {2}: failed.length
 #: src/lib/components/shared/assign-to-channel-dialog.tsx
 msgid "{0, plural, one {Failed to assign {entityIdsLength} {entityType} to {1} channel} other {Failed to assign {entityIdsLength} {entityType} to {2} channels}}"
-msgstr ""
+msgstr "{0, plural, one {將 {entityIdsLength} 個 {entityType} 指派至 {1} 個通路失敗} other {將 {entityIdsLength} 個 {entityType} 指派至 {2} 個通路失敗}}"
 
 #: src/app/routes/_authenticated/_orders/orders_.$id_.modify.tsx
 msgid "No billing address"
@@ -4036,7 +4036,7 @@ msgstr "國家"
 #. placeholder {0}: error.message
 #: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx
 msgid "Failed to remove order line: {0}"
-msgstr ""
+msgstr "移除訂單明細失敗：{0}"
 
 #: src/app/routes/_authenticated/_shipping-methods/components/test-address-form.tsx
 msgid "Street Address 2"
@@ -4117,7 +4117,7 @@ msgstr "等於"
 
 #: src/lib/components/shared/asset/asset-properties.tsx
 msgid "Source File"
-msgstr ""
+msgstr "來源檔案"
 
 #: src/app/routes/_authenticated/_products/components/create-product-options-dialog.tsx
 #: src/app/routes/_authenticated/_products/components/create-product-options-dialog.tsx
@@ -4310,7 +4310,7 @@ msgstr "可用動作"
 #. placeholder {0}: error.message
 #: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx
 msgid "Failed to update order line: {0}"
-msgstr ""
+msgstr "更新訂單明細失敗：{0}"
 
 #: src/lib/components/shared/rich-text-editor/link-dialog.tsx
 msgid "Insert link"
@@ -4429,7 +4429,7 @@ msgstr "高度"
 
 #: src/lib/components/shared/assign-to-channel-dialog.tsx
 msgid "Assign {entityType} to channels"
-msgstr ""
+msgstr "將 {entityType} 指派至通路"
 
 #: src/app/routes/_authenticated/_orders/components/order-modification-preview-dialog.tsx
 msgid "A refund of {formattedDiff} is required. Select payment amounts and enter a note to proceed."
@@ -4489,7 +4489,7 @@ msgstr "客戶資訊已更新"
 #. placeholder {0}: error.message
 #: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx
 msgid "Failed to delete draft order: {0}"
-msgstr ""
+msgstr "刪除草稿訂單失敗：{0}"
 
 #: src/lib/components/data-table/views-sheet.tsx
 msgid "Failed to convert view to global"
@@ -4497,15 +4497,15 @@ msgstr "將檢視轉換為全域失敗"
 
 #: src/app/routes/_authenticated/_payment-methods/components/payment-eligibility-checker-selector.tsx
 msgid "Select Payment Eligibility Checker"
-msgstr ""
+msgstr "選擇付款資格檢查器"
 
 #: src/lib/components/shared/assign-to-channel-dialog.tsx
 msgid "Select one or more channels"
-msgstr ""
+msgstr "選取一個或多個通路"
 
 #: src/lib/components/data-table/filters/data-table-enum-filter.tsx
 msgid "Select operator"
-msgstr ""
+msgstr "選擇運算子"
 
 #. js-lingui-explicit-id
 #: src/lib/framework/defaults.ts
@@ -4636,7 +4636,7 @@ msgstr "或"
 
 #: src/app/routes/_authenticated/_channels/channels_.$id.tsx
 msgid "You must select a default currency from the list of available currencies"
-msgstr ""
+msgstr "必須從可用貨幣清單中選取預設貨幣"
 
 #: src/app/routes/_authenticated/_assets/components/asset-tags-editor.tsx
 msgid "Manage tags"
@@ -4667,12 +4667,12 @@ msgstr "訂單已履行"
 
 #: src/lib/components/data-input/product-multi-selector-input.tsx
 msgid "Loading selected items..."
-msgstr ""
+msgstr "正在載入已選取項目..."
 
 #. placeholder {0}: error.message
 #: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx
 msgid "Failed to set billing address for order: {0}"
-msgstr ""
+msgstr "設定訂單帳單地址失敗：{0}"
 
 #: src/app/routes/_authenticated/_orders/orders_.$id_.modify.tsx
 msgid "No shipping address"
@@ -4873,7 +4873,7 @@ msgstr "{customerGroupName} 的客戶群組成員"
 #. placeholder {0}: e instanceof Error ? e.message : String(e)
 #: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx
 msgid "Failed to set address for order: {0}"
-msgstr ""
+msgstr "設定訂單地址失敗：{0}"
 
 #: src/app/routes/_authenticated/_orders/components/fulfillment-details.tsx
 #: src/app/routes/_authenticated/_orders/components/payment-details.tsx
@@ -4940,7 +4940,7 @@ msgstr "現有庫存"
 
 #: src/app/routes/_authenticated/_orders/components/customer-address-selector.tsx
 msgid "New address"
-msgstr ""
+msgstr "新增地址"
 
 #: src/lib/components/data-table/data-table-filter-dialog.tsx
 msgid "Filter by {columnId}"
@@ -5038,7 +5038,7 @@ msgstr "識別碼"
 
 #: src/app/routes/_authenticated/_shipping-methods/components/fulfillment-handler-selector.tsx
 msgid "Select a fulfillment handler"
-msgstr ""
+msgstr "選擇履行處理器"
 
 #: src/app/routes/_authenticated/_collections/collections_.$id.tsx
 msgid "Failed to update collection"
@@ -5370,7 +5370,7 @@ msgstr "狀態"
 #: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx
 #: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx
 msgid "Okay"
-msgstr ""
+msgstr "確定"
 
 #: src/lib/components/shared/configurable-operation-multi-selector.tsx
 #: src/lib/components/shared/configurable-operation-selector.tsx
@@ -5486,7 +5486,7 @@ msgstr "名字"
 
 #: src/lib/components/shared/product-variant-selector.tsx
 msgid "Add item to order"
-msgstr ""
+msgstr "將項目新增至訂單"
 
 #: src/lib/components/data-table/human-readable-operator.tsx
 msgid "contains"
@@ -5503,7 +5503,7 @@ msgstr "找不到項目"
 #: src/app/routes/_authenticated/_products/hooks/use-remove-option-group.ts
 #: src/app/routes/_authenticated/_products/hooks/use-remove-option-group.ts
 msgid "Failed to remove option group"
-msgstr ""
+msgstr "移除選項群組失敗"
 
 #: src/app/routes/_authenticated/_orders/components/order-table-totals.tsx
 msgid "Sub total"
@@ -5614,7 +5614,7 @@ msgstr "新增國家"
 
 #: src/app/routes/_authenticated/_channels/channels_.$id.tsx
 msgid "Defaults to the default language."
-msgstr ""
+msgstr "預設使用預設語言。"
 
 #: src/lib/components/data-input/custom-field-list-input.tsx
 msgid "Remove item"
@@ -5776,7 +5776,7 @@ msgstr "這些變更不需要付款或退款。"
 
 #: src/app/routes/_authenticated/_system/components/cancel-jobs-bulk-action.tsx
 msgid "{cancellableCount, plural, one {Are you sure you want to cancel {cancellableCount} job? This action cannot be undone.} other {Are you sure you want to cancel {cancellableCount} jobs? This action cannot be undone.}}"
-msgstr ""
+msgstr "{cancellableCount, plural, one {確定要取消 {cancellableCount} 個工作嗎？此操作無法復原。} other {確定要取消 {cancellableCount} 個工作嗎？此操作無法復原。}}"
 
 #: src/lib/framework/dashboard-widget/orders-summary/index.tsx
 msgid "Total Revenue"
@@ -6006,7 +6006,7 @@ msgstr "向 {groupName} 新增選項值"
 #. placeholder {0}: error.message
 #: src/app/routes/_authenticated/_orders/orders_.draft.$id.tsx
 msgid "Failed to unset shipping address for order: {0}"
-msgstr ""
+msgstr "取消設定訂單配送地址失敗：{0}"
 
 #: src/app/routes/_authenticated/_orders/components/add-surcharge-form.tsx
 #: src/app/routes/_authenticated/_orders/components/edit-order-table.tsx
@@ -6050,7 +6050,7 @@ msgstr "建立商品變體失敗"
 
 #: src/lib/components/data-input/relation-selector.tsx
 msgid "Search..."
-msgstr ""
+msgstr "搜尋..."
 
 #. placeholder {0}: formatLanguageName(contentLanguage)
 #: src/lib/components/layout/channel-switcher.tsx

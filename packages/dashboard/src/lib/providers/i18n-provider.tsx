@@ -2,8 +2,9 @@ import { loadI18nMessages } from '@/vdb/lib/load-i18n-messages.js';
 import { i18n } from '@lingui/core';
 import { I18nProvider as LinguiI18nProvider } from '@lingui/react';
 import React from 'react';
+import { uiConfig } from 'virtual:vendure-ui-config';
 
-export const defaultLocale = 'en';
+export const defaultLocale = uiConfig.i18n.defaultLanguage;
 
 // Dashboard extensions are evaluated asynchronously during app bootstrap and
 // may translate source-locale strings at module scope. Activate an empty source
